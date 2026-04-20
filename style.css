@@ -251,6 +251,6 @@ body {
     }
     .nav-btn { width: 100%; padding: 15px; margin: 0 !important; }
     #next-btn { order: 1; }
-    .finish-btn { order: 2; border: 1px solid #e74c3c; background: #fffaf9; }
-    #prev-btn { order: 3; }
+    #prev-btn { order: 2; }
+    .finish-btn { order: 3; border: 1px solid #e74c3c; background: #fffaf9; margin-top: 10px !important; }
 }
