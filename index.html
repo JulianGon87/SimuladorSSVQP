@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Evaluación SSVQP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Pantalla de Bienvenida -->
+    <div id="welcome-screen" class="welcome-card">
+        <h1>Simulador de Conocimientos Organizacionales</h1>
+        <p class="subtitle">Servicio de Salud Viña del Mar - Quillota - Petorca</p>
+        
+        <div class="instructions-box">
+            <p><strong>¡Bienvenido/a al simulador!</strong></p>
+            <p>Este cuestionario te ayudará a reforzar los conceptos institucionales y normativos de forma sencilla.</p>
+            <ul>
+                <li>Se te presentarán preguntas de selección múltiple elegidas al azar.</li>
+                <li>Podrás avanzar y retroceder libremente durante el test.</li>
+                <li>Al finalizar, podrás comprobar tus resultados y revisar la cita o fuente oficial de cada respuesta para reforzar tu aprendizaje.</li>
+            </ul>
+        </div>
+        
+        <button type="button" id="start-btn" class="primary-btn" onclick="startQuiz()">Comenzar Test</button>
+    </div>
+
+    <!-- Contenedor principal del simulador -->
+    <div id="quiz-wrapper" class="hidden">
+        <div id="question-counter" class="counter-text">Pregunta 1 de 100</div>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <div id="active-question-container">
+            <!-- La pregunta actual renderizada por JS -->
+        </div>
+
+        <div class="nav-controls">
+            <button type="button" id="prev-btn" class="nav-btn" onclick="prevQuestion()" style="visibility: hidden;">Anterior</button>
+            <button type="button" id="finish-btn" class="nav-btn finish-btn" onclick="finishQuiz()">Finalizar Test</button>
+            <button type="button" id="next-btn" class="nav-btn primary-btn" onclick="nextQuestion()">Siguiente</button>
+        </div>
+    </div>
+
+    <!-- Pantalla de Resultados -->
+    <div id="results-screen" class="hidden" style="text-align: center; padding: 40px; background: white; border-radius: 12px;">
+        <h2>Resultado de la Evaluación</h2>
+        <div id="final-stats"></div>
+        <div class="button-group" style="margin-top: 20px;">
+            <button onclick="showReview()" style="background: var(--primary); color: white;">Revisar mis respuestas</button>
+            <button onclick="location.reload()" style="background: var(--secondary); color: white;">Reintentar (Nuevas preguntas)</button>
+        </div>
+    </div>
+
+    <!-- Sección de Revisión -->
+    <div id="review-section" class="hidden">
+        <h2>Revisión de respuestas</h2>
+        <div id="review-list"></div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="location.reload()" style="background: var(--secondary); color: white;">Volver a intentar el simulador</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
